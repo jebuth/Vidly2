@@ -72,8 +72,9 @@ namespace Vidly2.Controllers
         //[Route("customers")]
         public ActionResult Index()
         {
-            var customers = _context.Customers.Include(property => property.MembershipType).ToList();
-            return View(customers);
+            //no longer need this since getting list from api
+            //var customers = _context.Customers.Include(property => property.MembershipType).ToList();
+            return View();
         }
 
         public ActionResult Details(int id)
