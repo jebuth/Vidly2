@@ -18,7 +18,7 @@ namespace Vidly2.Dtos
         public bool IsSubscribedToNewsletter { get; set; }
 
         // Remove from Dto to completely decouple this from our domain objects
-        //public MembershipType MembershipType { get; set; }
+        public MembershipTypeDto MembershipType { get; set; }
 
         public byte MembershipTypeId { get; set; }
 
