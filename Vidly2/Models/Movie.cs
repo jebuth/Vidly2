@@ -16,7 +16,7 @@ namespace Vidly2.Models
         public string Name { get; set; }
 
         [Display(Name="Genre")]
-        public GenreDto Genre { get; set; }
+        public Genre Genre { get; set; }
 
         public byte GenreId { get; set; }
 
