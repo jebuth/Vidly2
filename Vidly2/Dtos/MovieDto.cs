@@ -16,7 +16,7 @@ namespace Vidly2.Dtos
         public string Name { get; set; }
 
         //[Required]
-        //public Genre Genre { get; set; }
+        public GenreDto Genre { get; set; }
 
         [Required]
         public byte GenreId { get; set; }
