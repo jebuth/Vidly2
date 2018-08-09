@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Vidly2.Models;
+using Vidly2.ViewModels;
 
 namespace Vidly2.Controllers
 {
@@ -155,7 +156,8 @@ namespace Vidly2.Controllers
                 {
                     UserName = model.Email,
                     Email = model.Email,
-                    DrivingLicense = model.DrivingLicense
+                    DrivingLicense = model.DrivingLicense,
+                    Phone = model.Phone
                 };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
@@ -378,7 +380,12 @@ namespace Vidly2.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    DrivingLicense = model.DrivingLicense
+                };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
